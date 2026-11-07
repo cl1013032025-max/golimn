@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #10091b;
+    color: white;
+    overflow-x: hidden;
+}
+/* PORTADA */
+
+.inicio {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #160b29, #4b126b, #9b123e);
+    position: relative;
+    overflow: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    position: relative;
+    z-index: 2;
+}
+
+.logo {
+    font-size: 27px;
+    letter-spacing: 3px;
+}
+
+.logo span,
+footer span {
+    color: #ff315b;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    border: 1px solid #ff315b;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    background: #ff315b;
+}
+
+.presentacion {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 130px 20px 100px;
+    animation: aparecer 1.5s ease;
+}
+
+.subtitulo {
+    color: #ff668c;
+    letter-spacing: 5px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.presentacion h1 {
+    font-size: clamp(65px, 12vw, 130px);
+    letter-spacing: 10px;
+    text-shadow: 0 0 25px #a32bff;
+}
+
+.presentacion h1 span {
+    color: #ff315b;
+}
+
+.descripcion {
+    font-size: 20px;
+    margin: 25px 0 40px;
+    color: #e7d9f8;
+}
+
+.boton {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(90deg, #9c27ff, #ff315b);
+    padding: 17px 35px;
+    border-radius: 40px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 0 25px #a52aff66;
+    transition: 0.4s;
+}
+
+.boton:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px #ff315b;
+}
+
+/* CÍRCULOS DECORATIVOS */
+
+.circulo {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+    animation: flotar 6s infinite ease-in-out;
+}
+
+.circulo1 {
+    width: 250px;
+    height: 250px;
+    background: #9b27ff55;
+    top: 20%;
+    left: -100px;
+}
+
+.circulo2 {
+    width: 300px;
+    height: 300px;
+    background: #ff315b44;
+    bottom: -100px;
+    right: -100px;
+    animation-delay: 2s;
+}
+
+/* GALERÍA */
+
+.galeria {
+    padding: 90px 8%;
+    background: #10091b;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.titulo p {
+    color: #ff315b;
+    letter-spacing: 4px;
+    font-size: 13px;
+}
+
+.titulo h2 {
+    font-size: 35px;
+    margin-top: 15px;
+}
+
+.titulo h2 span {
+    color: #b44cff;
+}
+
+.imagenes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 30px;
+}
+
+.tarjeta {
+    background: #21142f;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #632b83;
+    transition: 0.4s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 0 25px #a52aff55;
+    border-color: #ff315b;
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.tarjeta:hover img {
+    transform: scale(1.08);
+}
+
+.tarjeta h3 {
+    padding: 20px 20px 10px;
+    color: #d99aff;
+    font-size: 22px;
+}
+
+.tarjeta p {
+    padding: 0 20px 25px;
+    color: #cbbbdc;
+    line-height: 1.6;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #190c27;
+    border-top: 1px solid #642b83;
+}
+
+footer h2 {
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #cbbbdc;
+    margin: 10px;
+}
+
+.copyright {
+    font-size: 12px;
+    margin-top: 25px;
+}
+
+/* MOVIMIENTO */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+    .presentacion {
+        padding-top: 100px;
+    }
+
+    .presentacion h1 {
+        letter-spacing: 5px;
+    }
+
+    .descripcion {
+        font-size: 17px;
+    }
+
+    .titulo h2 {
+        font-size: 27px;
+    }
+
+    .galeria {
+        padding: 60px 6%;
+    }
+}
